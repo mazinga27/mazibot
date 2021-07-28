@@ -144,7 +144,7 @@ tzlocal==2.1
 ujson==1.35
 urllib3==1.26.6
 utils==1.0.1
-uvloop==0.15.3
+uvloop==0.15.1
 virtualenv==20.4.7
 voxpopuli==0.3.7
 webencodings==0.5.1
