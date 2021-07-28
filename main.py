@@ -16,7 +16,6 @@ import asyncpg
 import ast
 import discord
 from discord.ext import commands
-from keep_alive import keep_alive
 from discord.ext.commands import has_permissions, MissingPermissions
 from gtts import gTTS
 import os
@@ -572,5 +571,4 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=activity)
 
 
-keep_alive()
 bot.run('NzkzMDg0MjcxMDMyMTM5ODI2.X-nHSQ.K6GK14ZuMaMMSU3xpE32r1d80pU')
