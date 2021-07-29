@@ -608,7 +608,7 @@ def calculate(exp):
         result = 'An error occurred.'
     return result
  
-@client.command()
+@commands.command
 async def calc(ctx):
     m = await ctx.send(content='Loading Calculators...')
     expression = 'None'
