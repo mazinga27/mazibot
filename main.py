@@ -15,7 +15,6 @@ from tempfile import TemporaryFile
 import asyncpg
 import ast
 import discord
-from dotenv import load_dotenv
 from discord.ext import commands
 from discord.ext.commands import has_permissions, MissingPermissions
 from gtts import gTTS
@@ -558,87 +557,7 @@ class Music(commands.Cog):
         vc = voice
       vc.play(discord.FFmpegPCMAudio("audio.mp3"), after=lambda e: print("Ho Eseguito Il Comando"))
       
-load_dotenv()
 
-
-client = commands.AutoShardedBot(commands.when_mentioned_or('-'))
-
-
-@client.event
-async def on_ready():
-	print('Ready.')
-
-def add(n: float, n2: float):
-	return n + n2
-
-def sub(n: float, n2: float):
-	return n - n2
-
-def rando(n: int, n2: int):
-	return random.randint(n, n2)
-
-def div(n: float, n2: float):
-	return n / n2
-
-def sqrt(n: float):
-	return math.sqrt(n)
-
-def mult(n: float, n2: float):
-	return n * n2
-
-@client.command()
-async def mathadd(ctx, x: float, y: float):
-	try:
-		result = add(x, y)
-		await ctx.send(result)
-
-	except:
-		pass
-
-@client.command()
-async def mathsub(ctx, x: float, y: float):
-	try:
-		result = sub(x, y)
-		await ctx.send(result)
-
-	except:
-		pass
-
-@client.command()
-async def mathrando(ctx, x: int, y: int):
-	try:
-		result = rando(x, y)
-		await ctx.send(result)
-
-	except:
-		pass
-
-@client.command()
-async def mathdiv(ctx, x: float, y: float):
-	try:
-		result = div(x, y)
-		await ctx.send(result)
-
-	except:
-		pass
-
-@client.command()
-async def mathmult(ctx, x: float, y: float):
-	try:
-		result = mult(x, y)
-		await ctx.send(result)
-
-	except:
-		pass
-
-@client.command()
-async def mathsqrt(ctx, x: float):
-	try:
-		result = sqrt(x)
-		await ctx.send(result)
-
-	except:
-		pass
 
 bot = commands.Bot('-', description='MaziBot.')
 bot.add_cog(Music(bot))
