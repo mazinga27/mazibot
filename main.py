@@ -15,7 +15,7 @@ from collections import deque
 from tempfile import TemporaryFile
 import asyncpg
 import ast
-import discord
+from discord_components import *
 from discord.ext import commands
 from discord.ext.commands import has_permissions, MissingPermissions
 from gtts import gTTS
