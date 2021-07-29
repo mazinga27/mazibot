@@ -581,32 +581,32 @@ def sqrt(x:float):
 #All commands are over now
 
 
-@commands.command()
+@client.command()
 async def mathadd(ctx,x:float,y:float):
 	res=add(x,y)
 	await ctx.send(res)
 
-@commands.command()
+@client.command()
 async def mathsub(ctx,x:float,y:float):
 	res=sub(x,y)
 	await ctx.send(res)
 
-@commands.command()
+@client.command()
 async def mathdiv(ctx,x:float,y:float):
 	res=div(x,y)
 	await ctx.send(res)
 
-@commands.command()
+@client.command()
 async def mathmul(ctx,x:float,y:float):
 	res=mul(x,y)
 	await ctx.send(res)
 
-@commands.command()
+@client.command()
 async def mathrandom(ctx,x:float,y:float):
 	res=rando(x,y)
 	await ctx.send(res)
 
-@commands.command()
+@client.command()
 async def mathsqrt(ctx,x:float):
 	res=sqrt(x)
 	await ctx.send(res)
