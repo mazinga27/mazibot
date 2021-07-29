@@ -18,3 +18,5 @@ psutil
 gTTS
 Flask
 async-timeout
+datetime
+discord-components
