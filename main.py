@@ -561,7 +561,7 @@ class Music(commands.Cog):
 load_dotenv()
 
 
-client = commands.AutoShardedBot(commands.when_mentioned_or('!'))
+client = commands.AutoShardedBot(commands.when_mentioned_or('-'))
 
 
 @client.event
