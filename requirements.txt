@@ -18,3 +18,4 @@ psutil
 gTTS
 Flask
 async-timeout
+dotenv
