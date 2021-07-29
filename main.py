@@ -3,7 +3,6 @@ import functools
 import itertools
 import math
 import datetime
-import discord-components
 import random
 import discord
 import language as language
