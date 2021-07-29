@@ -258,7 +258,6 @@ class VoiceState:
 
             self.current.source.volume = self._volume
             self.voice.play(self.current.source, after=self.play_next_song)
-            self.voice.source = discord.PCMVolumeTransformer(voice.source,volume = music_volume)
             await self.current.source.channel.send(embed=self.current.create_embed())
 
             await self.next.wait()
