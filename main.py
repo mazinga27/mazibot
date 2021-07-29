@@ -138,7 +138,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
                 except IndexError:
                     raise YTDLError('Non sono riuscito a recuperare nulla che sia pertinente con la tua ricerca `{}`'.format(webpage_url))
 
-        return cls(ctx, discord.FFmpegPCMAudio(info['url'], **cls.FFMPEG_OPTIONS), data=info, volume = music_volume)
+        return cls(ctx, discord.FFmpegPCMAudio(info['url'], **cls.FFMPEG_OPTIONS, volume = music_volume), data=info)
         
     @staticmethod
     def parse_duration(duration: int):
@@ -167,12 +167,11 @@ class Song:
         self.requester = source.requester
 
     def create_embed(self):
-        embed = (discord.Embed(title='Now playing',
+        embed = (discord.Embed(title='Sto Riproduceno:',
                                description='```css\n{0.source.title}\n```'.format(self),
                                color=discord.Color.blurple())
                  .add_field(name='Duration', value=self.source.duration)
                  .add_field(name='Requested by', value=self.requester.mention)
-                 .add_field(name='Uploader', value='[{0.source.uploader}]({0.source.uploader_url})'.format(self))
                  .add_field(name='URL', value='[Click]({0.source.url})'.format(self))
                  .set_thumbnail(url=self.source.thumbnail))
 
@@ -357,7 +356,7 @@ class Music(commands.Cog):
         global music_volume
 
 
-        if 0 > volume > 100:
+        if not 0 < volume < 100:
             return await ctx.send('Il Volume Deve Essere Compreso Tra 0 e 100.')
         music_volume = volume/100
         ctx.voice_state.current.source.volume = volume / 100
