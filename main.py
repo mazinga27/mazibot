@@ -563,7 +563,7 @@ class Music(commands.Cog):
 bot = commands.Bot('-', description='MaziBot.')
 bot.add_cog(Music(bot))
 
-client = commands.Bot(command_prefix = 'd!')
+client = commands.Bot(command_prefix = '-')
  
 @client.event
 async def on_ready():
@@ -613,7 +613,7 @@ def calculate(exp):
         result = 'An error occurred.'
     return result
  
-@client.command()
+@commands.command()
 async def calc(ctx):
     m = await ctx.send(content='Loading Calculators...')
     expression = 'None'
