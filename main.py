@@ -162,7 +162,7 @@ class Song:
     __slots__ = ('source', 'requester')
 
     def __init__(self, source: YTDLSource):
-        self.source = source
+        self.source = discord.PCMVolumeTransformer(source, volume=music_volume)
         self.requester = source.requester
 
     def create_embed(self):
