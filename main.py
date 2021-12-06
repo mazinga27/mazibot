@@ -162,7 +162,7 @@ class Song:
     __slots__ = ('source', 'requester')
 
     def __init__(self, source: YTDLSource):
-        self.source = discord.PCMVolumeTransformer(source, volume=music_volume)
+        self.source = source
         self.requester = source.requester
 
     def create_embed(self):
@@ -355,7 +355,7 @@ class Music(commands.Cog):
         global music_volume
 
 
-        if not 0 < volume <= 100:
+        if not 0 < volume < 100:
             return await ctx.send('Il Volume Deve Essere Compreso Tra 0 e 100.')
         music_volume = volume/100
         ctx.voice_state.current.source.volume = volume / 100
