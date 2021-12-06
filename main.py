@@ -562,7 +562,7 @@ bot.add_cog(Music(bot))
 
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="Sono una brutta copia di AhYesBot", type=3)
+    activity = discord.Game(name="Mazi e Dragon Regnano", type=3)
     await bot.change_presence(status=discord.Status.online, activity=activity)
 
 
