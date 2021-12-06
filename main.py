@@ -355,11 +355,12 @@ class Music(commands.Cog):
         global music_volume
 
 
-        if not 0 < volume < 100:
+        if not 0 < volume <= 100:
             return await ctx.send('Il Volume Deve Essere Compreso Tra 0 e 100.')
         music_volume = volume/100
         ctx.voice_state.current.source.volume = volume / 100
         await ctx.send('Il Volume è Stato Impostato A {}%'.format(volume))
+
 
     @commands.command(name='now', aliases=['current', 'playing'])
     async def _now(self, ctx: commands.Context):
